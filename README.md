@@ -11,7 +11,9 @@ DevBox AI is a modern, open-source developer toolkit built to make your daily co
     *   **Refactor:** Clean up and optimize your code.
     *   **Find Bugs:** Detect vulnerabilities and logical errors.
 *   **❴❵ JSON Formatter & Validator:** Prettify minified JSON and catch syntax errors easily.
+*   **🔑 JWT Decoder:** Instantly decode JSON Web Tokens to inspect Header and Payload data securely.
 *   **∿ Base64 Converter:** Quickly encode to or decode from Base64 format.
+*   **🔗 URL Encoder / Decoder:** Safely encode or decode URLs and query parameters.
 *   **🌙 Dark Mode First:** A beautiful, eye-friendly UI designed for developers.
 
 ## 🛠️ Tech Stack
@@ -51,7 +53,7 @@ npm run dev
 
 ## 🤝 Contributing
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page. 
-If you want to add a new tool (e.g., JWT Decoder, Regex Tester), please open a Pull Request!
+If you want to add a new tool (e.g., Hash Generator, Regex Tester), please open a Pull Request!
 
 ## 📝 License
 This project is [MIT](LICENSE) licensed.

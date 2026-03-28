@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { Braces, Binary, Sparkles, TerminalSquare } from 'lucide-react';
+import { Braces, Binary, Sparkles, TerminalSquare, Key, Link } from 'lucide-react';
 import JsonTool from './components/JsonTool';
 import Base64Tool from './components/Base64Tool';
 import AiAssistantTool from './components/AiAssistantTool';
+import JwtTool from './components/JwtTool';
+import UrlTool from './components/UrlTool';
 
-type Tool = 'ai' | 'json' | 'base64';
+type Tool = 'ai' | 'json' | 'base64' | 'jwt' | 'url';
 
 export default function App() {
   const [activeTool, setActiveTool] = useState<Tool>('ai');
@@ -19,7 +21,7 @@ export default function App() {
           </div>
           <h1 className="font-semibold text-lg tracking-tight">DevBox</h1>
         </div>
-        <nav className="flex-1 p-4 flex flex-col gap-2">
+        <nav className="flex-1 p-4 flex flex-col gap-2 overflow-y-auto">
           <button
             onClick={() => setActiveTool('ai')}
             className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors cursor-pointer ${activeTool === 'ai' ? 'bg-indigo-500/10 text-indigo-400' : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'}`}
@@ -33,10 +35,22 @@ export default function App() {
             <Braces size={18} /> JSON Formatter
           </button>
           <button
+            onClick={() => setActiveTool('jwt')}
+            className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors cursor-pointer ${activeTool === 'jwt' ? 'bg-indigo-500/10 text-indigo-400' : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'}`}
+          >
+            <Key size={18} /> JWT Decoder
+          </button>
+          <button
             onClick={() => setActiveTool('base64')}
             className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors cursor-pointer ${activeTool === 'base64' ? 'bg-indigo-500/10 text-indigo-400' : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'}`}
           >
             <Binary size={18} /> Base64 Converter
+          </button>
+          <button
+            onClick={() => setActiveTool('url')}
+            className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors cursor-pointer ${activeTool === 'url' ? 'bg-indigo-500/10 text-indigo-400' : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'}`}
+          >
+            <Link size={18} /> URL Encoder
           </button>
         </nav>
         <div className="p-4 border-t border-zinc-800 text-xs text-zinc-500 text-center">
@@ -49,7 +63,9 @@ export default function App() {
         <main className="flex-1 p-6 md:p-8 overflow-hidden">
           {activeTool === 'ai' && <AiAssistantTool />}
           {activeTool === 'json' && <JsonTool />}
+          {activeTool === 'jwt' && <JwtTool />}
           {activeTool === 'base64' && <Base64Tool />}
+          {activeTool === 'url' && <UrlTool />}
         </main>
       </div>
     </div>
