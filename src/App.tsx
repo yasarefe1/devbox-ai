@@ -1,12 +1,14 @@
 import { useState } from 'react';
-import { Braces, Binary, Sparkles, TerminalSquare, Key, Link } from 'lucide-react';
+import { Braces, Binary, Sparkles, TerminalSquare, Key, Link, Hash, Fingerprint } from 'lucide-react';
 import JsonTool from './components/JsonTool';
 import Base64Tool from './components/Base64Tool';
 import AiAssistantTool from './components/AiAssistantTool';
 import JwtTool from './components/JwtTool';
 import UrlTool from './components/UrlTool';
+import HashTool from './components/HashTool';
+import UuidTool from './components/UuidTool';
 
-type Tool = 'ai' | 'json' | 'base64' | 'jwt' | 'url';
+type Tool = 'ai' | 'json' | 'base64' | 'jwt' | 'url' | 'hash' | 'uuid';
 
 export default function App() {
   const [activeTool, setActiveTool] = useState<Tool>('ai');
@@ -52,6 +54,18 @@ export default function App() {
           >
             <Link size={18} /> URL Encoder
           </button>
+          <button
+            onClick={() => setActiveTool('hash')}
+            className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors cursor-pointer ${activeTool === 'hash' ? 'bg-indigo-500/10 text-indigo-400' : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'}`}
+          >
+            <Hash size={18} /> Hash Generator
+          </button>
+          <button
+            onClick={() => setActiveTool('uuid')}
+            className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors cursor-pointer ${activeTool === 'uuid' ? 'bg-indigo-500/10 text-indigo-400' : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'}`}
+          >
+            <Fingerprint size={18} /> UUID Generator
+          </button>
         </nav>
         <div className="p-4 border-t border-zinc-800 text-xs text-zinc-500 text-center">
           Open Source Developer Tools
@@ -66,6 +80,8 @@ export default function App() {
           {activeTool === 'jwt' && <JwtTool />}
           {activeTool === 'base64' && <Base64Tool />}
           {activeTool === 'url' && <UrlTool />}
+          {activeTool === 'hash' && <HashTool />}
+          {activeTool === 'uuid' && <UuidTool />}
         </main>
       </div>
     </div>
