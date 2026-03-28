@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Braces, Binary, Sparkles, TerminalSquare, Key, Link, Hash, Fingerprint } from 'lucide-react';
+import { Braces, Binary, Sparkles, TerminalSquare, Key, Link, Hash, Fingerprint, Palette } from 'lucide-react';
 import JsonTool from './components/JsonTool';
 import Base64Tool from './components/Base64Tool';
 import AiAssistantTool from './components/AiAssistantTool';
@@ -7,8 +7,9 @@ import JwtTool from './components/JwtTool';
 import UrlTool from './components/UrlTool';
 import HashTool from './components/HashTool';
 import UuidTool from './components/UuidTool';
+import ColorTool from './components/ColorTool';
 
-type Tool = 'ai' | 'json' | 'base64' | 'jwt' | 'url' | 'hash' | 'uuid';
+type Tool = 'ai' | 'json' | 'base64' | 'jwt' | 'url' | 'hash' | 'uuid' | 'color';
 
 export default function App() {
   const [activeTool, setActiveTool] = useState<Tool>('ai');
@@ -66,6 +67,12 @@ export default function App() {
           >
             <Fingerprint size={18} /> UUID Generator
           </button>
+          <button
+            onClick={() => setActiveTool('color')}
+            className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors cursor-pointer ${activeTool === 'color' ? 'bg-indigo-500/10 text-indigo-400' : 'text-zinc-400 hover:bg-zinc-800 hover:text-zinc-200'}`}
+          >
+            <Palette size={18} /> Color Converter
+          </button>
         </nav>
         <div className="p-4 border-t border-zinc-800 text-xs text-zinc-500 text-center">
           Open Source Developer Tools
@@ -82,6 +89,7 @@ export default function App() {
           {activeTool === 'url' && <UrlTool />}
           {activeTool === 'hash' && <HashTool />}
           {activeTool === 'uuid' && <UuidTool />}
+          {activeTool === 'color' && <ColorTool />}
         </main>
       </div>
     </div>

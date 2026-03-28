@@ -16,6 +16,7 @@ DevBox AI is a modern, open-source developer toolkit built to make your daily co
 *   **🔗 URL Encoder / Decoder:** Safely encode or decode URLs and query parameters.
 *   **#️⃣ Hash Generator:** Generate SHA-1, SHA-256, SHA-384, and SHA-512 hashes instantly.
 *   **🆔 UUID Generator:** Generate multiple UUIDs (v4) with a single click.
+*   **🎨 Color Converter:** Convert seamlessly between HEX, RGB, HSL, and CMYK formats.
 *   **🌙 Dark Mode First:** A beautiful, eye-friendly UI designed for developers.
 
 ## 🛠️ Tech Stack
@@ -55,7 +56,7 @@ npm run dev
 
 ## 🤝 Contributing
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page. 
-If you want to add a new tool (e.g., Regex Tester, Color Converter), please open a Pull Request!
+If you want to add a new tool (e.g., Regex Tester, Cron Parser), please open a Pull Request!
 
 ## 📝 License
 This project is [MIT](LICENSE) licensed.
