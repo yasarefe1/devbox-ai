@@ -1,0 +1,5 @@
+{
+  "name": "DevBox",
+  "description": "Geliştiriciler için açık kaynaklı araç kutusu (JSON Formatter, Base64, Yapay Zeka Kod Asistanı).",
+  "requestFramePermissions": []
+}
